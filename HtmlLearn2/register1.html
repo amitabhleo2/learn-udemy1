@@ -1,24 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Register form1</title>
 </head>
+
 <body>
-    <h1>Heading of the Form</h1>  
+    <h1>Heading of the Form</h1>
     <form action="" method="GET">
         First Name:<input type="text" title="title" name="First Name"> <br>
         Last Name:<input type="text" name="Last Name"> <br>
-        Email:<input type="email" required name="Email" > <br>
+        Email:<input type="email" required name="Email"> <br>
         Birthday:<input type="date" name="Birthdate"> <br>
         Password:<input type="password" name="Password"> <br>
         Gender: <br>
         <input type="radio" name="Gender" id="male"> Male<br>
         <input type="radio" name="Gender" id="female"> Female <br>
         <input type="radio" name="Gender" id="other"> Other <br>
-
-    </form>
+        Pets: <br>
+        <input type="checkbox" name="Cat">Cat <br>
+        <input type="checkbox" name="Dog">Dog <br>
+        Cars: <br>
+        <select name="Cars">
+            <option value="Audi">Audi</option>
+            <option value="BMW">BMW</option>
+        </select> <br> <br>
+        <input type="submit" value="Register !">
+        <input type="reset">
 </body>
+
 </html>
