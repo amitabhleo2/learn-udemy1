@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Register form1</title>
+</head>     
+
+<body>
+    <a href="Index2.html">Index</a>
+    <h1>Heading of the Form</h1>
+    <form action="" method="GET">
+        First Name:<input type="text" title="title" name="First Name"> <br>
+        Last Name:<input type="text" name="Last Name"> <br>
+        Email:<input type="email" required name="Email"> <br>
+        Birthday:<input type="date" name="Birthdate"> <br>
+        Password:<input type="password" min="3" name="Password"> <br>
+        Gender: <br>
+        <input type="radio" name="Gender" id="male"> Male<br>
+        <input type="radio" name="Gender" id="female"> Female <br>
+        <input type="radio" name="Gender" id="other"> Other <br>
+        Pets: <br>
+        <input type="checkbox" name="Cat">Cat <br>
+        <input type="checkbox" name="Dog">Dog <br>
+        Cars: <br>
+        <!-- Select and Option are the two syntax -->
+        <select name="Cars">
+            <option value="Audi">Audi</option>
+            <option value="BMW">BMW</option>
+        </select> <br> <br>
+        <input type="submit" value="Register !">
+        <input type="reset">
+</body>
+
+</html>
+<!-- 
+    ?
+    FirstName=Fake+
+    &lastname=last+name
+    &email=fakemail%40gmail.com
+    &birthdate=2019-01-16
+    &password=123
+    &Gender=male
+    &cat=on
+    &cars=Audi -->
