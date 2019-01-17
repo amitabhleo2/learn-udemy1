@@ -1,0 +1,42 @@
+<aura:component >
+    <!--This component will be used to create a form for student registration
+ Defining Attributes first-->
+    
+    <aura:attribute name = "studentName" type = "String" default = ""/>
+    <aura:attribute name = "parentName" type = "String" default = ""/>
+    <aura:attribute name = "mobileNumber" type = "Integer" default = ""/>
+    <aura:attribute name = "availableForWeekendClasses" type = "Boolean" default = "false"/>
+    <aura:attribute name = "howManyYearsStudied" type = "String[]" 
+                    default = "less than 5, between 5 and 10, greater than 10"/>
+    <aura:attribute name = "userResponse" type = "String" default =""/>
+    <aura:attribute name = "abc" type = "string" default ="false"/>
+    <!--Form Here-->
+   <!--value of abc -> {!v.abc}-->
+    <div class="slds-p-top_x-large">
+        <div class="slds-page-header h1">
+            <div class="slds-text-align_center">Student Registration Form</div>
+        </div>       
+    </div>
+    <br/>
+     <div class = "slds-size_3-of-8">
+    <lightning:input  label = "Student Name" name = "stdName" value = "{!v.studentName}" /><br/>
+    <lightning:input  label = "Parent Name" name = "prntName" value = "{!v.parentName}" /><br/>   
+    <lightning:input label = "Mobile Number" type="tel" name="mobNumber"  value="{!v.mobileNumber}" /><br/>
+    <lightning:input  label = "Available for Weekend Classes" type = "checkbox" name = "availableWeekends" 
+                     value = "{!v.availableForWeekendClasses}" /><br/>
+    <aura:if isTrue="false">
+        Hello! you have checked this box
+    </aura:if>
+    <!--defining picklist here-->
+    <lightning:select label = "How many years studied" name = "yearsOfStudy"  value = "{!v.userResponse}">
+        <!--<option value = "one">1</option>
+        <option value = "two" >2</option>
+        <option value = "three">3</option>-->
+        
+        <aura:iteration items = "{!v.howManyYearsStudied}" var = "yrs" >
+            <option value = "{!yrs}" text = "{!yrs}" />
+        </aura:iteration>
+    </lightning:select>
+    <lightning:button label = "Submit" onclick ="{!c.doSubmit}"></lightning:button>
+        </div>
+</aura:component>

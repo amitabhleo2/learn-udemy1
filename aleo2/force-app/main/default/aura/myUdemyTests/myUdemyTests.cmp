@@ -1,0 +1,8 @@
+<aura:component >
+	<!--testing the controller creation-->
+    <aura:attribute name = "abc" type = "String" default = "false"/>
+    	<!--lightning input-->
+    <lightning:input label = "ah abc" name = "abcName" value = "{!v.abc}"/>
+    <lightning:button label = "submit" onclick = "{!c.doSubmit}" ></lightning:button>	
+    
+</aura:component>
