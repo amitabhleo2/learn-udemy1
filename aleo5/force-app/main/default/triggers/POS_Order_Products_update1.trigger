@@ -52,8 +52,10 @@ trigger POS_Order_Products_update1 on POS_Order_Products__c (after insert, befor
             pop.Id = posOrdPrd.Id;
             pop.POS_Source_Location__c = posOrdPrd.POS_Orders__r.pos__c;
             pop.POS_Location__c = posOrdPrd.POS_Orders__r.destinationPOS_Id__c;
+            
             pop.POS_Source_Inventory__c = mapInventory.get(posOrdPrd.POS_Orders__r.pos__c).id;
-            //pop.POS_Inventory__c = mapInventory.get(posOrdPrd.POS_Orders__r.destinationPOS_Id__c).id;
+            if(mapInventory.containsKey(posOrdPrd.POS_Orders__r.destinationPOS_Id__c) && mapInventory.get(posOrdPrd.POS_Orders__r.destinationPOS_Id__c)!=null)
+            pop.POS_Inventory__c = mapInventory.get(posOrdPrd.POS_Orders__r.destinationPOS_Id__c).id;
             pop.updated__c=true;
             
             System.debug(pop.Id +'==='+mapInventory.get(posOrdPrd.POS_Orders__r.destinationPOS_Id__c));
