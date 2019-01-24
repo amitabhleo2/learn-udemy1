@@ -16,9 +16,8 @@ trigger AccountTrigger on Account (after insert,after update ) {
     }
     //Step 3: Will fetch all the values of City and State for each pinCodes
     List <States__c> stList = new List<States__c>();
-    List <City__c> ctyList = new List<City__c>();    
     
-    for(Pin_Code__c pin : [SELECT Id, Name, City__c,city__r.name FROM Pin_Code__c where Id IN: pinId]){
+        for(Pin_Code__c pin : [SELECT Id, Name, City__c,city__r.name FROM Pin_Code__c where Id IN: pinId]){
         System.debug('pin '+pin);
         //passing the values in a new Map
         Map<Id,Id> ctyMap = new Map<Id,Id>();
